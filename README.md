@@ -61,7 +61,7 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 
 ---
 
-**[Flow Chart & Sequence Diagram](https://github.com/wooo73/e-commerce/pull/1)**
+**[Flow Chart & Sequence Diagram](https://github.com/wooo73/e-commerce/blob/f53a3562cad06a2ad1af4899fc145ec6c60f71a9/docs/uml.md)**
 
 <details>
 <summary><strong>ERD</strong></summary>
