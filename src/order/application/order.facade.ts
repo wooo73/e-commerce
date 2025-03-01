@@ -39,23 +39,21 @@ export class OrderFacade {
             // 주문 가능 상품 조회
             const productsInfo = await this.productService.getAvailableOrderProducts(products, tx);
 
-            for (let item of productsInfo) {
-                const productInfo = products.find((product) => product.productId === item.id);
-
-                //주문 상품 재고 검증
-                await this.productService.validateProductRemainingQuantityWithLock(
-                    item.id,
-                    productInfo.quantity,
-                    tx,
-                );
-
-                //주문 상품 재고 차감
-                await this.productService.decreaseProductRemainingQuantity(
-                    item.id,
-                    productInfo.quantity,
-                    tx,
-                );
-            }
+            await Promise.all(
+                productsInfo.map(async (item) => {
+                    const productInfo = products.find((product) => product.productId === item.id);
+                    await this.productService.validateProductRemainingQuantityWithLock(
+                        item.id,
+                        productInfo.quantity,
+                        tx,
+                    );
+                    await this.productService.decreaseProductRemainingQuantity(
+                        item.id,
+                        productInfo.quantity,
+                        tx,
+                    );
+                }),
+            );
 
             // 유저 조회
             const user = await this.userService.getUserBalance(userId, tx);
@@ -122,10 +120,11 @@ export class OrderFacade {
             };
 
             // 주문 상품 정보 데이터 생성
-            for (let item of orderItemsDto) {
-                const orderItem = await this.orderService.createOrderItem(item, tx);
-                orderResponseData.orderItems.push(orderItem);
-            }
+            orderResponseData.orderItems = await Promise.all(
+                orderItemsDto.map(
+                    async (item) => await this.orderService.createOrderItem(item, tx),
+                ),
+            );
 
             return OrderResponseDto.from(orderResponseData);
         });

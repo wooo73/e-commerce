@@ -1,3 +1,5 @@
+load-test/k6
+
 # dotenv environment variable files
 .env
 .env.dev

@@ -196,22 +196,28 @@ export class CouponService {
 
             const successIssue = [];
 
-            for (const request of requestQueue) {
-                const userId = request;
+            //TODO: 실패 재처리 로직 구현
+            const failedIssue = [];
 
-                const issueKey = generateIssueCouponKey(couponId);
-                const saddCouponIssue = await this.couponRedisRepository.saddIssueCoupon(
-                    issueKey,
-                    userId,
-                );
+            await Promise.allSettled(
+                requestQueue.map(async (request) => {
+                    const userId = request;
 
-                if (saddCouponIssue <= 0) {
-                    continue;
-                }
+                    const issueKey = generateIssueCouponKey(couponId);
+                    const saddCouponIssue = await this.couponRedisRepository.saddIssueCoupon(
+                        issueKey,
+                        userId,
+                    );
 
-                await this.issueCouponWithRedisStructure(couponId, Number(userId));
-                successIssue.push(userId);
-            }
+                    if (saddCouponIssue <= 0) {
+                        failedIssue.push({ issueKey, userId });
+                        return;
+                    }
+
+                    await this.issueCouponWithRedisStructure(couponId, Number(userId));
+                    successIssue.push(userId);
+                }),
+            );
 
             const updateCouponStock = couponStock - successIssue.length;
             await this.couponRedisRepository.updateCouponStock(couponKey, updateCouponStock);
