@@ -66,7 +66,7 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 <details>
 <summary><strong>ERD</strong></summary>
 
-#### ![ERD 다이어그램](https://private-user-images.githubusercontent.com/91710667/399771184-ade06bed-6cb7-444f-9d88-ead303ef3403.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA0NjYwNjQsIm5iZiI6MTc0MDQ2NTc2NCwicGF0aCI6Ii85MTcxMDY2Ny8zOTk3NzExODQtYWRlMDZiZWQtNmNiNy00NDRmLTlkODgtZWFkMzAzZWYzNDAzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjI1VDA2NDI0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJiMTZmNWNiYjM3MWU1MmVlYmY4MjQwNGNjZWYwZDViNmU0MzkzYmUyMjU3MjEyNzZjNTgzMzhiYzExNmE0YmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.U5tAdMgYKUuASEA3g6BOup9ErTaMvvDHba8BT4_aKtI)
+#### ![ERD 다이어그램](./docs/images/hhplus-e-commerce-erd.png)
 
 </details>
 
@@ -80,7 +80,7 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 - MySQL, Redis 컨테이너 기반 통합 테스트 환경 구축
 - 테스트 데이터 초기화 및 환경 설정 자동화
 
-**[테스트 컨테이너 문서](예시:testcontainsers.md주소)**
+**[테스트 컨테이너 문서](https://github.com/wooo73/e-commerce/blob/main/docs/testcontainsers.md)**
 
 ## 4. 동시성 제어와 통합테스트
 
