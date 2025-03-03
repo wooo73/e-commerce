@@ -117,7 +117,13 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 
 ---
 
-... 작성 예정
+#### 주요 내용
+
+- Docker를 이용한 카프카 환경 구성 및 연동
+- Transactional Outbox Pattern 구현
+- 메시지 재발행 스케줄러 구현
+
+**[카프카 연결과 Transactional Outbox Pattern](https://github.com/wooo73/e-commerce/blob/main/docs/kafka.md)**
 
 ## 8. 부하테스트
 
