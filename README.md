@@ -108,7 +108,10 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 
 ---
 
-... 작성 예정
+- 이벤트를 활용한 트랜잭션 분리
+- 결제 프로세스 외부 API 영향 제거
+
+**[이벤트와 트랜잭션 분리](https://github.com/wooo73/e-commerce/blob/main/docs/event.md)**
 
 ## 7. 카프카 연결과 Transactional Outbox Pattern
 
