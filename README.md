@@ -66,7 +66,7 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 <details>
 <summary><strong>ERD</strong></summary>
 
-#### ![ERD 다이어그램](./docs/images/hhplus-e-commerce-erd.png)
+#### ![ERD 다이어그램](./docs/images/hhplus-e-commerce-erd2.png)
 
 </details>
 
