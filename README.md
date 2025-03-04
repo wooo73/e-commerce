@@ -22,7 +22,6 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 - [6. 이벤트와 트랜잭션 분리](#6-이벤트와-트랜잭션-분리)
 - [7. 카프카 연결과 Transactional Outbox Pattern](#7-카프카-연결과-transactional-outbox-pattern)
 - [8. 부하테스트](#8-부하테스트)
-- [9. 패키지 구조](#9-패키지-구조)
 
 ## 1. 요구사항
 
@@ -136,9 +135,3 @@ e-commerce 시스템에 전반적인 기능 구현 및 다양한 기술을 적�
 - 성능 개선 전후 Grafana + Influx DB를 활용한 메트릭 비교 분석
 
 **[부하테스트 문서](https://github.com/wooo73/e-commerce/blob/feat/step19/docs/k6.md)**
-
-## 9. 패키지 구조
-
----
-
-... 작성 예정
